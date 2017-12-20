@@ -1,4 +1,4 @@
-```
+```js
 var ajax = function (opts) {
     function format(data) {
         var arr = []
