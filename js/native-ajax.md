@@ -7,12 +7,12 @@ var ajax = function (opts) {
         }
         return arr.join('&')
     }
-
+    var data = opts.data||{}
     if (opts.dataType == 'jsonp') {
         var callback = ('jsonp_' + new Date().getTime())
-        opts.data.callback = callback
+        data.callback = callback
         var script = document.createElement('script')
-        script.src = opts.url + '?' + format(opts.data)
+        script.src = opts.url + '?' + format(data)
         script.onerror = function () {
             opts.error && opts.error()
         }
@@ -24,16 +24,16 @@ var ajax = function (opts) {
         document.body.appendChild(script)
     } else {
         var xhr = new XMLHttpRequest()
-        var data = format(opts.data)
-        var method = opts.method.toUpperCase()||'GET'
+        data = format(data)
+        var method = opts.method ? opts.method.toUpperCase() : 'GET'
         xhr.open(method, opts.url + ((method == 'GET') ? ('?' + data) : ''))
         xhr.onreadystatechange = function () {
             if (xhr.readyState == 4) {
-                var _res = {}
-                try {
-                    _res = JSON.parse(xhr.responseText)
-                } catch (e) {}
                 if (xhr.status == 200) {
+                    var _res = {}
+                    try {
+                        _res = JSON.parse(xhr.responseText)
+                    } catch (e) {}
                     opts.success && opts.success(_res)
                 } else {
                     opts.error && opts.error(_res)
