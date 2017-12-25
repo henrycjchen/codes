@@ -25,7 +25,8 @@ var ajax = function (opts) {
     } else {
         var xhr = new XMLHttpRequest()
         var data = format(opts.data)
-        xhr.open(opts.method.toUpperCase(), opts.url + ((type == 'GET') ? ('?' + data) : ''))
+        var method = opts.method.toUpperCase()||'GET'
+        xhr.open(method, opts.url + ((method == 'GET') ? ('?' + data) : ''))
         xhr.onreadystatechange = function () {
             if (xhr.readyState == 4) {
                 var _res = {}
