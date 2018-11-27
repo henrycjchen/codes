@@ -53,7 +53,3 @@ function Promise(fn) {
     }
 }
 ```
-
-## author
-
-陈家宾，jiabin.chen@weimob.com
