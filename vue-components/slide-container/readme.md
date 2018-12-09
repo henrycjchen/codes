@@ -1,5 +1,6 @@
 ## 组件描述
 多 tab 内容导航组件
+相关 git 地址：https://git.code.oa.com/henrycjchen/slide-container
 ### 特性
 - 支持手势滑动内容切换 `tab`
 - 切换 `tab` 时，记录上一个 `tab` 内容的滚动位置
@@ -9,7 +10,7 @@
 
 ### 效果
 
-![](./1.gif)
+![](http://km.oa.com/files/photos/pictures/201812/1544337576_23_w375_h667.gif)
 
 ## 使用方法
 ```html
@@ -21,9 +22,19 @@
 >
   <div v-show="activeIndex==0"></div>
   <div v-show="activeIndex==1"></div>
-  </div>
 </slide-container>
+```
+**参数**
 
+| name         | default | type                        | required | description                                                  |
+| ------------ | ------- | --------------------------- | -------- | ------------------------------------------------------------ |
+| nav          | -       | Array([{name: '', id: ''}]) | yes      | 导航数据，其中 name 是 tab 用于显示的名字，id 则是该 tab 的 id|
+| init-index   | 0       | Number                      | no       | 初始显示的 tab 索引，表示一开始显示第几个 tab，从 0 开始|
+| active-tab   | -       | Function                    | no       | 切换 tab 时触发这个事件，并带有激活 tab 的 `id` 和 `index`   |
+| reach-bottom | -       | Function                    | no       | 内容滚动到底部时触发这个事件，并带有当前 tab 的 `id` 和 `index` |
+
+**js 代码**
+```
 <script>
   {
     data() {
@@ -44,7 +55,7 @@
     ...
     methods: {
       activeTab(id, index) {
-        // todo
+        this.activeIndex = index;
       },
       scrollHandler(id, index) {
         // todo
@@ -53,19 +64,6 @@
   }
 </script>
 ```
-
-
-
-### 参数
-
-| name         | default | type                        | required | description                                                  |
-| ------------ | ------- | --------------------------- | -------- | ------------------------------------------------------------ |
-| nav          | -       | Array([{name: '', id: ''}]) | yes      | 导航数据                                                     |
-| init-index   | 0       | Number                      | no       | 初始激活 tab 索引，表示第一次显示第几个 tab，从 0            |
-| active-tab   | -       | Function                    | no       | 切换 tab 时触发这个事件，并带有激活 tab 的 `id` 和 `index`   |
-| reach-bottom | -       | Function                    | no       | 内容滚动到底部时触发这个事件，并带有当前 tab 的 `id` 和 `index` |
-
-
 
 ### 注意
 
