@@ -10,7 +10,7 @@
 
 ### 效果
 
-![](http://km.oa.com/files/photos/pictures/201812/1544337576_23_w375_h667.gif)
+![](./1.gif)
 
 ## 使用方法
 ```html
