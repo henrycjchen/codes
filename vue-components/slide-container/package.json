@@ -1,0 +1,41 @@
+{
+  "name": "slide-container",
+  "version": "1.0.0",
+  "description": "多 tab 内容导航组件\r ### 特性\r - 支持手势滑动内容切换 `tab`\r - 切换 `tab` 时，记录上一个 `tab` 内容的滚动位置\r - 切换 `tab` 时，导航栏自动滚动，使当前 `tab` 项位于导航栏中间\r - 切换 `tab` 时触发 `active-tab` 事件\r - 滚动到底部时触发 `reach-bottom` 事件（一般用于分页加载）",
+  "main": "dist/slide-container.min.js",
+  "scripts": {
+    "start": "webpack-dev-server --open --config webpack.dev.js --progress --colors",
+    "build": "webpack --config webpack.build.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://git.code.oa.com/henrycjchen/slide-container.git"
+  },
+  "keywords": [],
+  "author": "henrycjchen",
+  "license": "ISC",
+  "dependencies": {
+    "vue": "^2.6.10"
+  },
+  "devDependencies": {
+    "eslint": "^5.16.0",
+    "eslint-config-alloy": "^1.4.2",
+    "eslint-plugin-vue": "^5.2.2",
+    "babel-eslint": "^10.0.1",
+    "@babel/core": "^7.4.5",
+    "@babel/preset-env": "^7.4.5",
+    "babel-loader": "^8.0.6",
+    "css-loader": "^0.28.7",
+    "vue-eslint-parser": "^3.2.2",
+    "vue-loader": "^15.2.4",
+    "vue-style-loader": "^4.1.1",
+    "vue-template-compiler": "^2.4.4",
+    "webpack": "^4.36.1",
+    "webpack-cli": "^3.3.6",
+    "webpack-dev-server": "^3.1.4",
+    "webpack-hot-middleware": "^2.22.2",
+    "webpack-merge": "^4.2.1",
+    "sass-loader": "^6.0.6",
+    "node-sass": "^4.10.0"
+  }
+}

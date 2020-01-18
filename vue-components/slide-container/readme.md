@@ -9,7 +9,10 @@
 
 ### 效果
 
-![](./1.gif)
+<img src="./imgs/demo.gif" width="300px" />
+
+### 体验
+[在 CodeSandbox 中打开（需要打开浏览器的手机模拟）](https://6nlde.csb.app/)
 
 ## 使用方法
 ```html
@@ -47,7 +50,7 @@
         // todo
       },
       scrollHandler(id, index) {
-			  // todo
+        // todo
       }
     }
   }
@@ -62,11 +65,17 @@
 | ------------ | ------- | --------------------------- | -------- | ------------------------------------------------------------ |
 | nav          | -       | Array([{name: '', id: ''}]) | yes      | 导航数据                                                     |
 | init-index   | 0       | Number                      | no       | 初始激活 tab 索引，表示第一次显示第几个 tab，从 0            |
-| active-tab   | -       | Function                    | no       | 切换 tab 时触发这个事件，并带有激活 tab 的 `id` 和 `index`   |
-| reach-bottom | -       | Function                    | no       | 内容滚动到底部时触发这个事件，并带有当前 tab 的 `id` 和 `index` |
-
-
+|initId|''|String|no|初始导航 id|
+|textAlign|''|String|no|导航对齐 css 样式，默认居左|
+|isDisable|false|Boolean|no|是否屏蔽 tab 切换功能|
+|slideBgColor|''|String|no|列表背景颜色|
+|lineStyle|{}|Object|no|下划线样式|
+|itemStyle|{}|Object|no|nav项样式|
+|isInnerScroll|true|Boolean|no|slide 列表是否需要内置滚动|
+| height       | '100%'  | String                      | no       | slider-container 高度|
+| @active-tab  | -       | Function                    | no       | 切换 tab 时触发这个事件，并带有激活 tab 的 `id` 和 `index`   |
+| @reach-bottom | -       | Function                    | no       | 内容滚动到底部时触发这个事件，并带有当前 tab 的 `id` 和 `index` |
 
 ### 注意
 
-组件的父元素需要指定高度，才能实现组件的内部滚动。
+组件的高度默认为父组件的 100%，因此需要指定父元素高度（或者设定 height 属性），才能实现组件的内部滚动。
