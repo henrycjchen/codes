@@ -1,6 +1,5 @@
 ## 组件描述
 多 tab 内容导航组件
-相关 git 地址：https://git.code.oa.com/henrycjchen/slide-container
 ### 特性
 - 支持手势滑动内容切换 `tab`
 - 切换 `tab` 时，记录上一个 `tab` 内容的滚动位置
@@ -10,10 +9,14 @@
 
 ### 效果
 
-<img src="./imgs/demo.gif" width="300px" />
+<img src="./imgs/demo.gif" width="300" />
 
-### 体验
-[在 CodeSandbox 中打开（需要打开浏览器的手机模拟）](https://6nlde.csb.app/)
+### CodeSandbox
+在 CodeSandbox 中[体验](https://6nlde.csb.app/)，需要打开浏览器的手机模拟模式
+
+在 CodeSandbox 中[调试](https://codesandbox.io/embed/slide-container-6nlde)
+
+
 
 ## 使用方法
 ```html
@@ -25,19 +28,9 @@
 >
   <div v-show="activeIndex==0"></div>
   <div v-show="activeIndex==1"></div>
+  </div>
 </slide-container>
-```
-**参数**
 
-| name         | default | type                        | required | description                                                  |
-| ------------ | ------- | --------------------------- | -------- | ------------------------------------------------------------ |
-| nav          | -       | Array([{name: '', id: ''}]) | yes      | 导航数据，其中 name 是 tab 用于显示的名字，id 则是该 tab 的 id|
-| init-index   | 0       | Number                      | no       | 初始显示的 tab 索引，表示一开始显示第几个 tab，从 0 开始|
-| active-tab   | -       | Function                    | no       | 切换 tab 时触发这个事件，并带有激活 tab 的 `id` 和 `index`   |
-| reach-bottom | -       | Function                    | no       | 内容滚动到底部时触发这个事件，并带有当前 tab 的 `id` 和 `index` |
-
-**js 代码**
-```
 <script>
   {
     data() {
@@ -58,7 +51,7 @@
     ...
     methods: {
       activeTab(id, index) {
-        this.activeIndex = index;
+        // todo
       },
       scrollHandler(id, index) {
         // todo
@@ -72,19 +65,19 @@
 
 ### 参数
 
-| name         | default | type                        | required | description                                                  |
-| ------------ | ------- | --------------------------- | -------- | ------------------------------------------------------------ |
-| nav          | -       | Array([{name: '', id: ''}]) | yes      | 导航数据                                                     |
-| init-index   | 0       | Number                      | no       | 初始激活 tab 索引，表示第一次显示第几个 tab，从 0            |
-|initId|''|String|no|初始导航 id|
-|textAlign|''|String|no|导航对齐 css 样式，默认居左|
-|isDisable|false|Boolean|no|是否屏蔽 tab 切换功能|
-|slideBgColor|''|String|no|列表背景颜色|
-|lineStyle|{}|Object|no|下划线样式|
-|itemStyle|{}|Object|no|nav项样式|
-|isInnerScroll|true|Boolean|no|slide 列表是否需要内置滚动|
-| height       | '100%'  | String                      | no       | slider-container 高度|
-| @active-tab  | -       | Function                    | no       | 切换 tab 时触发这个事件，并带有激活 tab 的 `id` 和 `index`   |
+| name          | default | type                        | required | description                                                  |
+| ------------- | ------- | --------------------------- | -------- | ------------------------------------------------------------ |
+| nav           | -       | Array([{name: '', id: ''}]) | yes      | 导航数据                                                     |
+| init-index    | 0       | Number                      | no       | 初始激活 tab 索引，表示第一次显示第几个 tab，从 0            |
+| initId        | ''      | String                      | no       | 初始导航 id                                                  |
+| textAlign     | ''      | String                      | no       | 导航对齐 css 样式，默认居左                                  |
+| isDisable     | false   | Boolean                     | no       | 是否屏蔽 tab 切换功能                                        |
+| slideBgColor  | ''      | String                      | no       | 列表背景颜色                                                 |
+| lineStyle     | {}      | Object                      | no       | 下划线样式                                                   |
+| itemStyle     | {}      | Object                      | no       | nav项样式                                                    |
+| isInnerScroll | true    | Boolean                     | no       | slide 列表是否需要内置滚动                                   |
+| height        | '100%'  | String                      | no       | slider-container 高度                                        |
+| @active-tab   | -       | Function                    | no       | 切换 tab 时触发这个事件，并带有激活 tab 的 `id` 和 `index`   |
 | @reach-bottom | -       | Function                    | no       | 内容滚动到底部时触发这个事件，并带有当前 tab 的 `id` 和 `index` |
 
 ### 注意
